@@ -1,4 +1,4 @@
-// Workbox를 디버그모드로 설정 
+/* // Workbox를 디버그모드로 설정 
 workbox.setConfig({
   debug: false,
 });
@@ -43,4 +43,4 @@ self.addEventListener('notificationclick', function (event) {
   }
   // 푸시알림 이벤트 종료
   event.notification.close();
-}, false);
+}, false); */

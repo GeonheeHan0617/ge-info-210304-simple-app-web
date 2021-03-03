@@ -1,63 +1,62 @@
+
 <template>
-  <v-container>
-    <v-row wrap>
-      <!-- 상단에 제목 표시 -->
-      <v-col cols="12" class="text-center">
-        <h1 class="display-1">메시지 보내기</h1>
-      </v-col>
-      <v-col class="my-3" offset="1" cols="10">
-        <!-- 카드 UI 안에 입력 컨트롤 배치 -->
-        <v-card color="blue-grey lighten-1" dark>
-          <!-- 중간 영역에 제목과 내용 입력 받음 -->
-          <v-container class="my-3">
-            <!-- 한 행에 하나의 항목 표시를 위해 column 어트리뷰트 사용 -->
-            <v-row>
-              <v-col cols="12">
-                <v-text-field autofocus name="title" label="제목" type="text" v-model="sTitle" color="white">
-                </v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <!-- rows와 multi-line 어트리뷰트 사용으로 3줄 입력컨트롤로
-										변경 -->
-                <v-textarea rows="3" name="message" label="내용" type="text" v-model="sMsg" color="white"></v-textarea>
-              </v-col>
-            </v-row>
-          </v-container>
-          <v-card-actions>
-            <!-- block 어트리뷰트 사용으로 하단에 발송 블록레벨 버튼 표시 -->
-            <v-btn block large color="orange" dark @click="fnSendPush">
-              <v-icon left>message</v-icon>발 송
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+<v-app>
+
+    <h1> Contact.vue </h1>
+      <v-card-text style=" color: #121212;  text-align: center;">
+        <a src="" style="text-decoration: unset;" href="https://geonhee-60ce9-geonhee-potpolio.web.app/">
+        <div style="border:solid; ">
+      <h3 style=" color: #121212;">geonhee 포트폴리오</h3>
+      <br>
+      <img src="https://img.freepik.com/free-vector/south-korean-map_23-2147816537.jpg?size=338&ext=jpg&ga=GA1.2.457485423.1597622400">
+      </div>
+      </a>
+      </v-card-text>
+ 
+
+<div class="mx-auto" >  <a style="text-decoration:none; color:#121212" href="https://creativecommons.org/licenses/">
+      <img  style="  width: 16px; height: 16px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/1200px-Cc.logo.circle.svg.png"> 
+      Copyright 2021.</a> -- by KoreaName Han <br>
+       || 📁 Web Front-end developer.  <br>|| Engineer Information Processing_KR_Ready 
+        <br><small>  &nbsp; &nbsp;|| <a href="https://mail.google.com/mail/u/0/#inbox">📧 Email:  southkorea123@southkorea.com </a>
+          &nbsp; &nbsp; || 📞 Tel:  010-1234-1234  ||</small> 
+
+        
+      </div>
+           <br>
+      <br>
+      <br>
+      <br>     <br>
+      <br>
+      <br>
+      <br>
+           <br>
+      <br>
+      <br>
+      <br>
+</v-app>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        sTitle: '', // 제목을 저장할 임시 변수
-        sMsg: '' // 내용을 저장할 임시 변수
-      }
-    },
-    methods: {
-      fnSendPush() {
-        // 발송할 내용 JSON 형식으로 변경
-        const PreparedData = JSON.stringify({
-          pTitle: this.sTitle,
-          pMsg: this.sMsg
-        })
-        // 파이어스토어 함수 실행
-        fetch('https://us-central1-pwa-notification-push.cloudfunctions.net/storePushData', {
-          method: "POST",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: PreparedData
-        }).catch(err => console.log('오류!' + err.message));
-      }
-    }
-  }
+ 
 </script>
+
+<style lang="scss" scoped>
+h1 {
+text-align: center;
+
+}
+ header, section  {
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+  color: #292929;
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid #cccccc;
+
+  p {
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+}
+</style>
