@@ -4,7 +4,7 @@
 			하며 v-app엘리먼트 안의 내용이 적절히 표시되도로 도움. -->
     <v-navigation-drawer clipped v-model="drawer" app>
       <v-list>
-        <h2> ## main</h2>
+        
         <hr/>
         <!-- <small>main</small>
         <hr/> -->
@@ -25,7 +25,7 @@
         <hr/>
       <!--   <h2> ## 이론</h2>
         <hr/> -->
-        <small>==== secondary. 이론 ====</small>
+        
         <hr/>
 
         <!-- key="'A'+i" A,B,C 표시하기 -->
@@ -46,7 +46,7 @@
         <hr/>
         <!-- <h2>## 연락처</h2> -->
         <!-- <hr/> -->
-        <small> ==== 3rd. 연락처 ====</small>
+        
         <hr/>
         <v-list-item value="true" v-for="(item, i) in items3" :key="'B'+i" :to="item.to">
           <v-list-item-action>
@@ -63,22 +63,12 @@
         <hr/>
         <hr/>
            <!-- <hr/> -->
-        <small> ==== 4rd. 정보처리기사 참고 블로그 ====</small>
+        
         <hr/>
-        <v-list-item value="true" v-for="(item, i) in items4" :key="'C'+i" :href="item.link">
-          <v-list-item-action>
-            <!-- html 엘리먼트의 값으로 바인딩할 때는 v-html 디렉티브 사용
-							-->
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-subtitle v-text="item.title4"></v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+     
         <hr>
         <hr/>
-        <hr/>
-        <hr/>
+     
 
 
 
@@ -88,7 +78,7 @@
 			배치되도록 app과 clipped-left 어트리뷰트 지정 -->
     <v-app-bar app clipped-left fixed color="primary" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title> GeonHee의 정보처리기사 준비 사이트 입니다.  </v-toolbar-title>
+      <v-toolbar-title> 이천순복음우리교회 사이트 입니다.  </v-toolbar-title>
      
     </v-app-bar>
       
@@ -99,17 +89,21 @@
       <div class="mt-5"></div>
       <router-view />
     </v-content>
+
+    
       <v-footer color="secondary" fixed dark>
     
       <div class="mx-auto" >  <a style="text-decoration:none; color:#fff" href="https://creativecommons.org/licenses/">
       <img  style="  width: 16px; height: 16px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/1200px-Cc.logo.circle.svg.png"> 
-      Copyright 2021.</a> -- by KoreaName Han <br>
-       || 📁 Web Front-end developer.  <br>|| Engineer Information Processing_KR_Ready  <br>|| Release date: March 4, 21 Year
+      Copyright 2021.</a> -- by  KoreaName Han ,Sidesman  <br>
+       ||   <br>||   <br>|| Release date: August 3, 21 Year
         <br><small>  &nbsp; &nbsp;|| 📧 Email: 
           &nbsp; &nbsp; || 📞 Tel:  ||</small> 
         
       </div>
         
+
+
         <v-list>
          <v-list-item value="true" v-for="(item, i) in itemsicon" :key="i" :href="item.link">
           <v-list-item-action>
@@ -135,71 +129,40 @@
       return {
         drawer: false,
         items: [{
-          icon: 'info',
-            title: '| Main |',
+          icon: 'home',
+            title: '| 처음화면 |',
             to: '/'
           },
           {
-          icon: 'note',
-            title: '| Basic |',
-            to: '/basic'
+          icon: 'info',
+            title: '| 예배안내 |',
+            to: '/worship-table'
           },
           {
-            icon: 'notebook',
-            title: '| 정보처리기사  ＃CBT |',
-            to: '/infotestmain'
+            icon: 'note',
+            title: '| 주보 |',
+            to: '/weekly'
           }
         ],
           /* 정보처리기사 1~5 이론 */
           
          items2: [{
-            icon: 'folder_open',
-            title: '| 정보처리기사 1과 |',
-            to: '/info1'
+            icon: 'map1',
+            title: '| 위치 |',
+            to: '/map1'
           },
-          {
-            icon: 'work',
-            title: '| 정보처리기사 2과 |',
-            to: '/info2'
-          },
-          {
-            icon: 'table',
-            title: '| 정보처리기사 3과 |',
-            to: '/info3'
-          },
-          {
-            icon: 'folder_close',
-            title: '| 정보처리기사 4과 |',
-            to: '/info4'
-          },
-          {
-            icon: 'folder',
-            title: '| 정보처리기사 5과 |',
-            to: '/info5'
-          }],
+    
+          ],
 
           items3:[
           {
             icon: 'call',
-            title: '| Contact |',
+            title: '| network |',
             to: '/contact'
           }
         ],
         
-          items4:[
-          {
-            icon: 'camera',
-            title4: '| 네이버 블로그 || 2021 정보처리기사 필기|',
-            link: 'https://section.blog.naver.com/'
-          },
-          
-           {  icon: 'edit',
-            title4: '|tistory 블로그 || 2021 정보처리기사 필기 '+
-						'in my duty'+
-            '|',
-            link: ' https://tistory.com/'
-                    }
-        ],
+       
           itemsicon: [/* {
             icon: 'note',
             title: 'q-net',
